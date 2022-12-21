@@ -1,0 +1,35 @@
+// colors
+$primary-orange: #ff7757;
+$secondary-orange: #ffd2c7;
+$slide-container: #fff8f1;
+
+$primary-dark: #331811;
+$secondary-dark: #61291c;
+
+$primary-text: #172432;
+$secondary-text: #767e86;
+
+// fonts
+$rubik: "Rubik", sans-serif;
+$mulish: "Mulish", sans-serif;
+$playfair: "PlayfairDisplay", sans-serif;
+
+%title-underline {
+  content: "";
+  background-color: $primary-orange;
+  height: 3px;
+  width: 63%;
+  position: absolute;
+  bottom: 0;
+}
+
+%button {
+  color: #fff;
+  border-radius: 12px;
+  background-color: $primary-orange;
+  transition: background-color 0.5s;
+  cursor: pointer;
+  &:hover {
+    background-color: $primary-text;
+  }
+}

@@ -1,0 +1,159 @@
+.trip__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trip__header {
+  margin-right: 30px;
+}
+
+.trip__title {
+  position: relative;
+  &::after {
+    @extend %title-underline;
+    left: 0;
+  }
+}
+
+.trip__subtitle {
+  margin-top: 32px;
+  max-width: 394px;
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+
+.trip__link {
+  @extend %button;
+  display: inline-block;
+  font-size: 18px;
+  padding: 20px;
+  position: relative;
+  margin-left: 40px;
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: -18px;
+    left: -18px;
+    z-index: -1;
+    width: 43px;
+    height: 43px;
+    background-color: $primary-text;
+  }
+  &::before {
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: -18px;
+    right: -18px;
+    z-index: -1;
+    width: 43px;
+    height: 43px;
+    background-color: $secondary-text;
+  }
+}
+
+.trip___body {
+  display: flex;
+  gap: 32px;
+  .trip__item {
+    position: relative;
+    cursor: pointer;
+    flex: 1;
+  }
+
+  .trip__item-img {
+    max-width: 300px;
+    height: 399px;
+    position: relative;
+    top: 0;
+    transition: linear 0.5s;
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: 26px;
+    }
+    &:hover {
+      top: -120px;
+    }
+  }
+
+  .trip__desc {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -2;
+    width: 100%;
+  }
+
+  .trip__price-box {
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .trip__price-type {
+    text-transform: uppercase;
+  }
+
+  .trip__name {
+    font-size: 28px;
+    font-family: $playfair;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  .trip__rating-box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .trip__days-count {
+    font-style: 18px;
+  }
+}
+
+@media screen and (max-width: 1152px) {
+  .trip__content {
+    flex-direction: column;
+  }
+  .trip__header {
+    margin-bottom: 130px;
+    align-self: flex-start;
+  }
+  .trip__subtitle {
+    max-width: none;
+  }
+  .trip___body {
+    width: 100%;
+    .trip__item-img {
+      max-width: none;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .trip__header {
+    margin-bottom: 50px;
+    margin-right: 0;
+  }
+  .trip___body {
+    flex-direction: column;
+    gap: 60px;
+    .trip__item-img {
+      cursor: auto;
+      &:hover {
+        top: 0;
+      }
+    }
+    .trip__desc {
+      position: static;
+      margin-top: 20px;
+    }
+  }
+}
